@@ -1,6 +1,6 @@
 # TODO List
   **This is a simple app for keeping track of different tasks**
-  // screenshot
+  <!-- screenshot -->
 
 ## Built With 
 
@@ -10,7 +10,7 @@
 
 ## Live Demo
 
-[Simple To-Do List:bookmark_tabs:](https://pret3nti0u5.github.io/To-Do-List)
+[Simple To-Do List:bookmark_tabs:](https://andresefq.github.io/todo-list/)
 
 
 ## Getting Started
