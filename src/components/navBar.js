@@ -1,22 +1,29 @@
 import menuIcon from "../assets/icons/align-justify.png";
 import homeIcon from "../assets/icons/home.png";
-import addTaskIcon from "../assets/icons/plus.png"
-
-const content = document.getElementById('content');
+import addTaskIcon from "../assets/icons/plus.png";
+import "../styles/globals.css";
+import "../styles/navBar.css";
+import $ from "jquery";
 
 export default function navBar() {
-
-  const nav = document.createElement('nav');
-  const menu = document.createElement('img');
-  menu.src = menuIcon;
-  const home = document.createElement('img');
-  home.src = homeIcon;
-  const addTask = document.createElement('img');
-  addTask.src = addTaskIcon;
-
-  nav.appendChild(menu);
-  nav.appendChild(home);
-  nav.appendChild(addTask);
-
-  content.appendChild(nav);
+  $(document).ready(function () {
+    const nav = $('<nav></nav>');
+    const menu = $(
+      `<button>
+        <img src=${menuIcon} alt="menu" />
+      </button>`
+    );
+    const home = $(
+      `<button>
+        <img src=${homeIcon} alt="home" />
+      </button>`
+    );
+    const addTask = $(
+      `<button>
+        <img src=${addTaskIcon} alt="add" />
+      </button>`
+    );
+    nav.append(menu, home, addTask);
+    $('#content').append(nav);
+  });
 }

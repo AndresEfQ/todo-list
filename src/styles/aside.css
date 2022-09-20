@@ -1,0 +1,50 @@
+#aside {
+  font-family: 'Roboto', sans-serif;
+  width: 300px;
+  height: calc(100vh - 43px);
+  background-color: var(--light-grey);
+  padding: 30px 25px 0 52px;
+}
+
+#aside div {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+#aside img {
+  height: 18px;
+  width: 18px;
+  filter: invert(49%) sepia(4%) saturate(20%) hue-rotate(317deg) brightness(101%) contrast(84%);
+}
+
+span {
+  margin-left: auto;
+  font-size: small;
+}
+
+#aside #projects {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+#projects div {
+  margin: 10px 0 0 20px;
+}
+
+#projects div:first-child {
+  margin: 0;
+}
+
+#projects button {
+  visibility: hidden;
+  border: none;
+  background-color: var(--light-grey);
+  cursor: pointer;
+  margin-left: auto;
+}
+
+#projects > div:hover button {
+  visibility: visible;
+}
