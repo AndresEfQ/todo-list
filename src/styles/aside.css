@@ -3,13 +3,25 @@
   width: 300px;
   height: calc(100vh - 43px);
   background-color: var(--light-grey);
-  padding: 30px 25px 0 52px;
+  padding: 30px 5px 0 32px;
 }
 
 #aside div {
-  margin: 20px 0;
+  padding: 10px 20px;
   display: flex;
   gap: 10px;
+}
+
+/* #aside div > div {
+  padding: 0;
+} */
+
+#aside div:hover {
+  background-color: var(--grey);
+}
+
+#aside #projects:hover {
+  background-color: var(--light-grey);
 }
 
 #aside img {
@@ -25,12 +37,14 @@ span {
 
 #aside #projects {
   margin-top: 40px;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 
 #projects div {
-  margin: 10px 0 0 20px;
+  margin-left: 20px;
 }
 
 #projects div:first-child {
@@ -47,4 +61,5 @@ span {
 
 #projects > div:hover button {
   visibility: visible;
+  background-color: var(--grey);
 }
