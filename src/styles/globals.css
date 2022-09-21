@@ -1,5 +1,5 @@
 :root {
-  --red: #d94047;
+  --red: #d7493f;
   --dark-red: #92292e;
   --light-grey: #fafafa;
   --grey: #eeeeee;
@@ -21,7 +21,25 @@
 
 @font-face {
   font-family: 'Roboto';
+  src: url("../assets/fonts/roboto-v30-latin-700.woff") format("woff"),
+       url("../assets/fonts/roboto-v30-latin-700.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
   src: url("../assets/fonts/roboto-v30-latin-900.woff") format("woff"),
        url("../assets/fonts/roboto-v30-latin-900.woff2") format("woff2");
   font-weight: 900;
+}
+
+#content {
+  display: grid;
+  grid-template-areas: 
+    "head head"
+    "aside main"
+    "aside main"
+    "footer footer";
+  grid-template-columns: 300px calc(100vw - 300px);
+  grid-template-rows: 43px calc(100vh - 43px - 30px) 30px;
 }

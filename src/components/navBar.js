@@ -1,4 +1,4 @@
-import menuIcon from "../assets/icons/align-justify.png";
+import menuIcon from "../assets/icons/menu-burger.png";
 import homeIcon from "../assets/icons/home.png";
 import addTaskIcon from "../assets/icons/plus.png";
 import "../styles/globals.css";
