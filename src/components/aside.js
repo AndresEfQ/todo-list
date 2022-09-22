@@ -7,9 +7,9 @@ import remove from "../assets/icons/trash.png";
 import "../styles/aside.css";
 
 export default function aside() {
-  $(document).ready(function () {
-    const asideDiv = $(
-      `<div id='aside'></div>`
+  $(function () {
+    const asideElement = $(
+      `<aside></aside>`
     );
     const inbox = $(
       `<div id='inbox'>
@@ -51,7 +51,7 @@ export default function aside() {
       </div>`
     );
     projects.append(sampleProject);
-    asideDiv.append(inbox, today, upcoming, projects);
-    $('#content').append(asideDiv);
+    asideElement.append(inbox, today, upcoming, projects);
+    $('.container').append(asideElement);
   });
 }

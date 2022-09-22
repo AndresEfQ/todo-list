@@ -1,7 +1,7 @@
 import navBar from "./components/navBar.js";
-import aside from "./components/aside.js";
-import main from "./components/main.js";
+import container from "./components/container.js";
+import functions from "./functions/index.js";
 
 navBar();
-aside();
-main();
+container();
+functions();

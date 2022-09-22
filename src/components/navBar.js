@@ -6,20 +6,20 @@ import "../styles/navBar.css";
 import $ from "jquery";
 
 export default function navBar() {
-  $(document).ready(function () {
+  $(function () {
     const nav = $('<nav></nav>');
     const menu = $(
-      `<button>
+      `<button class="menu">
         <img src=${menuIcon} alt="menu" />
       </button>`
     );
     const home = $(
-      `<button>
+      `<button class="home">
         <img src=${homeIcon} alt="home" />
       </button>`
     );
     const addTask = $(
-      `<button>
+      `<button class="add-task">
         <img src=${addTaskIcon} alt="add" />
       </button>`
     );
