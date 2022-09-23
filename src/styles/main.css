@@ -1,11 +1,20 @@
 main {
+  display: none;
   /* grid-area: main; */
-/*   flex: 1; */
+  /* flex: 1; */
   width: calc(100% - var(--aside-width));
-  height: 100%;
+  height: calc(100vh - 43px - 30px);
   font-family: 'Roboto', sans-serif;
   padding: 30px 55px 0 55px;
   display: inline-block;
+  transition: all 0.5s;
+  position: absolute;
+  left: 300px;
+}
+
+main.toggle-menu {
+  width: 100%;
+  left: 0;
 }
 
 main img {
@@ -88,4 +97,18 @@ input[type=checkbox] {
 
 .add_task img {
   filter: invert(44%) sepia(51%) saturate(1561%) hue-rotate(329deg) brightness(83%) contrast(104%);
+}
+
+@media only screen and (max-width: 750px) {
+  main {
+    width: 100%;
+    left: 0;
+  }
+
+/*   .shade.toggleable {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  } */
 }

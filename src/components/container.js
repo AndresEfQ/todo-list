@@ -5,7 +5,7 @@ import "../styles/container.css";
 
 export default function container() {
   $(function () {
-    const container = $('<div class="container"></div>');
+    const container = $('<div class="container toggleable"></div>');
     aside();
     main();
     $('#content').append(container);

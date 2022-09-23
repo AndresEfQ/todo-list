@@ -1,12 +1,18 @@
 aside {
-  /* grid-area: aside; */
   font-family: 'Roboto', sans-serif;
   display: inline-block;
   width: var(--aside-width);
   height: calc(100vh - 43px - 30px);
   background-color: var(--light-grey);
   padding: 30px 5px 0 32px;
-/*   transition: all 1s; */
+  transition: left 0.5s;
+  position: absolute;
+  left: 0;
+  z-index: 3;
+}
+
+aside.toggle-menu {
+  left: -300px;
 }
 
 aside div {
@@ -61,4 +67,14 @@ aside #projects {
 #projects > div:hover button {
   visibility: visible;
   background-color: var(--grey);
+}
+
+@media only screen and (max-width: 750px) {
+  aside {
+    left: -300px;
+  }
+
+  aside.toggle-menu {
+    left: 0;
+  }
 }

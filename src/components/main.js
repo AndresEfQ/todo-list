@@ -7,7 +7,8 @@ import add from "../assets/icons/plus.png";
 
 export default function main () {
   $(function () {
-    const mainElement = $(`<main></main>`);
+    const mainElement = $(`<main class="toggleable"></main>`);
+/*     const shade = $('<div class="shade toggleable"></div>'); */
     const sampleProject = $(
       `<div id="current_project">
         <div id="project_header">

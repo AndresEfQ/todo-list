@@ -4,6 +4,7 @@ import addTaskIcon from "../assets/icons/plus.png";
 import "../styles/globals.css";
 import "../styles/navBar.css";
 import $ from "jquery";
+import showMenu from "../functions/showMenu.js";
 
 export default function navBar() {
   $(function () {
@@ -13,6 +14,7 @@ export default function navBar() {
         <img src=${menuIcon} alt="menu" />
       </button>`
     );
+    menu.on('click', showMenu);
     const home = $(
       `<button class="home">
         <img src=${homeIcon} alt="home" />

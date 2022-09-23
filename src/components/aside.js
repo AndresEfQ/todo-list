@@ -9,7 +9,7 @@ import "../styles/aside.css";
 export default function aside() {
   $(function () {
     const asideElement = $(
-      `<aside></aside>`
+      `<aside class="toggleable"></aside>`
     );
     const inbox = $(
       `<div id='inbox'>
