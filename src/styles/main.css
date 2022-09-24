@@ -12,7 +12,7 @@ main {
   left: 300px;
 }
 
-main.toggle-menu {
+main.hidden-menu {
   width: 100%;
   left: 0;
 }

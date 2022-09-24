@@ -4,10 +4,21 @@
   max-width: 100vw;
 }
 
+.shade {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 43px - 30px);
+  transition: opacity 0.5s;
+}
+
 @media only screen and (max-width: 750px) {
 
-  .toggle-menu {
+  .shade {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
+  }
+
+  .hidden-menu > .shade {
+    opacity: 0;
   }
 }

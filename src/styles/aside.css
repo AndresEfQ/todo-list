@@ -11,7 +11,7 @@ aside {
   z-index: 3;
 }
 
-aside.toggle-menu {
+aside.hidden-menu {
   left: -300px;
 }
 
@@ -70,11 +70,8 @@ aside #projects {
 }
 
 @media only screen and (max-width: 750px) {
-  aside {
+ 
+  aside.hidden-menu {
     left: -300px;
-  }
-
-  aside.toggle-menu {
-    left: 0;
   }
 }
