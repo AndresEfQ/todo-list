@@ -1,20 +1,20 @@
 import $ from "jquery";
-import "../styles/globals.css";
-import "../styles/main.css";
 import options from "../assets/icons/menu-dots.png";
 import settings from "../assets/icons/settings-sliders.png";
 import add from "../assets/icons/plus.png";
+import showMain from "../functions/showMain.js";
+import "../styles/globals.css";
+import "../styles/main.css";
 
 export default function main () {
   $(function () {
     const mainElement = $(`<main class="toggleable"></main>`);
-/*     const shade = $('<div class="shade toggleable"></div>'); */
     const sampleProject = $(
       `<div id="current_project">
         <div id="project_header">
           <h2 id="projectTitle">Sample Project</h2>
-          <img src=${options} alt="options" />
-          <img src=${settings} alt="settings" />
+          <button type="button"><img src=${options} alt="options" /></button>
+          <button type="button"><img src=${settings} alt="settings" /></button>
         </div>
       </div>`
     );
@@ -53,6 +53,7 @@ export default function main () {
     )
     tasks.append(sampleTask, task2);
     mainElement.append(sampleProject, tasks, addTask);
+    mainElement.on('click', showMain)
     $('.container').append(mainElement);
   });
 }

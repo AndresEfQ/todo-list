@@ -9,6 +9,7 @@
   width: 100%;
   height: calc(100vh - 43px - 30px);
   transition: opacity 0.5s;
+  pointer-events: none;
 }
 
 @media only screen and (max-width: 750px) {
