@@ -2,7 +2,7 @@ import $ from "jquery";
 import options from "../assets/icons/menu-dots.png";
 import settings from "../assets/icons/settings-sliders.png";
 import add from "../assets/icons/plus.png";
-import showMain from "../functions/showMain.js";
+import showMain from "../DOMfunctions/showMain.js";
 import "../styles/globals.css";
 import "../styles/main.css";
 

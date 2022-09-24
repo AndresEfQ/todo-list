@@ -4,7 +4,7 @@ import addTaskIcon from "../assets/icons/plus.png";
 import "../styles/globals.css";
 import "../styles/navBar.css";
 import $ from "jquery";
-import toggleMenu from "../functions/toggleMenu.js";
+import toggleMenu from "../DOMfunctions/toggleMenu.js";
 
 export default function navBar() {
   $(function () {

@@ -1,7 +1,7 @@
 import $ from "jquery";
 import aside from "./aside.js";
 import main from "./main.js";
-import handleResize from "../functions/handleResize.js";
+import handleResize from "../DOMfunctions/handleResize.js";
 import "../styles/container.css";
 
 export default function container() {
