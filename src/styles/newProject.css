@@ -1,0 +1,6 @@
+.new-project {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}

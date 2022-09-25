@@ -1,8 +1,4 @@
-const project = (name, tasks) => {
-  return {
-    name, tasks
-  }
-}
+import addProject from "./addProject.js";
 
 const task = (title, description, dueDate, priority) => {
   return {
@@ -17,3 +13,5 @@ let task2 = task("Investigar TODO", "Una task con una descripción muy larga que
 let sampleProject = project("Sample Project", [sampleTask1, sampleTask2]);
 
 let projects = [sampleProject];
+
+export default function 

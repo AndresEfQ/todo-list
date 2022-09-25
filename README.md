@@ -7,6 +7,8 @@
 - Vanilla JS
 - HTML5
 - CSS3
+- Webpack
+- JQuery
 
 ## Live Demo
 
