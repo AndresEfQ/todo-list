@@ -1,18 +1,19 @@
-import "../logic/addProject.js";
+import addPorject from "../logic/addProject.js";
+import "../styles/globals.css";
 import "../styles/newProject.css";
 import $ from "jquery";
 
 export default function newProject() {
   $(function () {
     const cancelButton = $('<button type="button" id="cancel">Cancel</button>');
-    cancelButton.on('click', removeNewProjectElement);
+    cancelButton.on('click', cancelNewProject);
 
-    const addButton = $('<button type="button" id"add">Add</button>');
-    addButton.on('click', addProject);
+    const addButton = $('<button type="button" id="add">Add</button>');
+    addButton.on('click', addNewProject);
 
     const newProjectElement = $(
       `<div class="new-project">
-        <div className="new-project__header">
+        <div class="new-project__header">
           Add project
         </div>
         <form action="#" method="GET" id="new-project-form">
@@ -30,13 +31,13 @@ export default function newProject() {
 
     $('#content').append(newProjectElement);
 
-    function removeNewProjectElement() {
-      $('#content').remove(newProjectElement);
+    function cancelNewProject() {
+      $('.new-project').remove();
     }
 
-    function addProject() {
-      console.log($('#name').val())
-      $('#content').remove(newProjectElement);
+    function addNewProject() {
+      addPorject($('#name').val());
+      $('.new-project').remove();
 
     }
   });

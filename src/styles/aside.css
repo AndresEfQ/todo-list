@@ -25,6 +25,10 @@ aside div:hover {
   background-color: var(--grey);
 }
 
+#projects-title {
+  margin-top: 40px;
+}
+
 aside #projects:hover {
   background-color: var(--light-grey);
 }
@@ -49,14 +53,14 @@ aside #projects {
 }
 
 #projects div {
-  margin-left: 20px;
+  padding-left: 40px;
 }
 
 #projects div:first-child {
   margin: 0;
 }
 
-#projects button {
+aside button {
   visibility: hidden;
   border: none;
   background-color: var(--light-grey);
@@ -64,7 +68,7 @@ aside #projects {
   margin-left: auto;
 }
 
-#projects > div:hover button {
+aside > div:hover button {
   visibility: visible;
   background-color: var(--grey);
 }

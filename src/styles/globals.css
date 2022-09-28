@@ -2,7 +2,7 @@
   --red: #d7493f;
   --light-red: #cc797f;
   --light-grey: #fafafa;
-  --grey: #eeeeee;
+  --grey: #dddddd;
   --dark-grey: #808080;
   --aside-width: 300px;
 }
@@ -33,26 +33,3 @@
        url("../assets/fonts/roboto-v30-latin-900.woff2") format("woff2");
   font-weight: 900;
 }
-
-/* #content {
-  display: grid;
-  grid-template-areas: 
-    "head head"
-    "aside main"
-    "aside main"
-    "footer footer";
-  grid-template-columns: 300px calc(100vw - 300px);
-  grid-template-rows: 43px calc(100vh - 43px - 30px) 30px;
-}
-
-@media only screen and (max-width: 750px) {
-  #content {
-    grid-template-areas: 
-    "head"
-    "main"
-    "main"
-    "footer";
-    grid-template-columns: 100vw;
-    grid-template-rows: 43px calc(100vh - 43px - 30px) 30px;
-  }
-} */

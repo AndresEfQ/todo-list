@@ -4,6 +4,8 @@ import todayIcon from "../assets/icons/calendar-check.png";
 import upcomingIcon from "../assets/icons/calendar.png";
 import add from "../assets/icons/plus.png";
 import remove from "../assets/icons/trash.png";
+import newProject from "./newProject.js";
+import projectsArray from "../app.js";
 import "../styles/aside.css";
 
 export default function aside() {
@@ -32,17 +34,20 @@ export default function aside() {
         <span>3</span>
       </div>`
     );
-    const projects = $(
-      `<div id='projects'>
-        <div>
-          <strong>Projects</strong>
-          <button>
-            <img src=${add} alt="add" />
-          </button>
-        </div>
-      </div>`
-    )
-    const sampleProject = $(
+    const addProject = $(
+      `<button>
+      <img src=${add} alt="add" />
+      </button>`
+      );
+    addProject.on('click', newProject);
+    const projectsTitle = $(`<div id="projects-title"><strong>Projects</strong></div>`);
+    projectsTitle.append(addProject);
+    const projectsDiv = $(
+      `<div id='projects'></div>`
+    );
+   /*  projectsDiv.append($(`<div><strong>Projects</strong></div>`).append(addProject)); */
+
+    /* const sampleProject = $(
       `<div>
         Sample Project
         <button>
@@ -50,8 +55,9 @@ export default function aside() {
           </button>
       </div>`
     );
-    projects.append(sampleProject);
-    asideElement.append(inbox, today, upcoming, projects);
+    projectsDiv.append(sampleProject); */
+
+    asideElement.append(inbox, today, upcoming, projectsTitle, projectsDiv);
     $('.container').append(asideElement);
   });
 }

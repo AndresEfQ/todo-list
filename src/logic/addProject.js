@@ -1,16 +1,31 @@
+import remove from "../assets/icons/trash.png";
 import addTask from "./addTask.js"; 
 import removeTask from "./removeTask.js";
-
-let projects = []
+import projectsArray from "../app.js";
+import $ from "jquery";
 
 export default function addProject (projectName) {
 
   function project (name) {
-    tasks = [];
+    let tasks = [];
     return {
       name, tasks, addTask, removeTask
     }
   }
 
-  projects.push(project(projectName));
+  projectsArray().push(project(projectName));
+  console.log(projectsArray());
+
+  projectsArray().forEach(element => {
+    const project = $(
+      `<div>
+      ${element.name}
+      <button>
+      <img src=${remove} alt="remove" />
+      </button>
+      </div>`
+    );
+    console.log(project[0]);
+    $('#projects').append(project[0]);
+  });
 }

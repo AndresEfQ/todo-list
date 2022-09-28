@@ -1,6 +1,61 @@
 .new-project {
   position: absolute;
+  width: 400px;
   top: 32px;
   left: 50%;
   transform: translateX(-50%);
+  font-family: 'Roboto', sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  z-index: 4;
+  box-shadow: 0 0 20px 10px #444444;
+}
+
+.new-project__header {
+  padding: 14px 30px;
+  font-weight: 700;
+  background-color: var(--light-grey);
+  border-bottom: 1px solid var(--grey);
+  border-radius: 10px 10px 0 0;
+}
+
+.new-project form {
+  height: 150px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.new-project input {
+  height: 30px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+}
+
+.new-project__footer {
+  padding: 14px 30px;
+  display: flex;
+  justify-content: end;
+  gap: 8px;
+  border-top: 1px solid var(--grey);
+}
+
+.new-project__footer button {
+  font-family: inherit;
+  font-weight: 700;
+  padding: 7px 14px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.new-project__footer button#add {
+  background-color: var(--red);
+  color: white;
+}
+
+.new-project__footer button:hover {
+  border: 1px solid var(--dark-grey);
 }
