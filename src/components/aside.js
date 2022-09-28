@@ -10,6 +10,8 @@ import "../styles/aside.css";
 
 export default function aside() {
   $(function () {
+
+    // HTML structure
     const asideElement = $(
       `<aside class="toggleable"></aside>`
     );
@@ -34,28 +36,15 @@ export default function aside() {
         <span>3</span>
       </div>`
     );
-    const addProject = $(
-      `<button>
-      <img src=${add} alt="add" />
-      </button>`
-      );
-    addProject.on('click', newProject);
-    const projectsTitle = $(`<div id="projects-title"><strong>Projects</strong></div>`);
-    projectsTitle.append(addProject);
-    const projectsDiv = $(
-      `<div id='projects'></div>`
-    );
-   /*  projectsDiv.append($(`<div><strong>Projects</strong></div>`).append(addProject)); */
 
-    /* const sampleProject = $(
-      `<div>
-        Sample Project
-        <button>
-            <img src=${remove} alt="add" />
-          </button>
-      </div>`
+    // Add the event listener to add new project
+    const projectsTitle = $(
+      `<div class="project" id="projects-title"><strong>Projects</strong></div>`)
+      .append($($(`<button><img src=${add} alt="add" /></button>`))
+      .on('click', newProject)
     );
-    projectsDiv.append(sampleProject); */
+
+    const projectsDiv = $(`<div id='projects'></div>`);
 
     asideElement.append(inbox, today, upcoming, projectsTitle, projectsDiv);
     $('.container').append(asideElement);

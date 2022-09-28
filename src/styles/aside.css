@@ -68,7 +68,7 @@ aside button {
   margin-left: auto;
 }
 
-aside > div:hover button {
+.project:hover button {
   visibility: visible;
   background-color: var(--grey);
 }

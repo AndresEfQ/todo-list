@@ -16,9 +16,11 @@ export default function addProject (projectName) {
   projectsArray().push(project(projectName));
   console.log(projectsArray());
 
+  $('#projects').html('');
+
   projectsArray().forEach(element => {
     const project = $(
-      `<div>
+      `<div class="project">
       ${element.name}
       <button>
       <img src=${remove} alt="remove" />
