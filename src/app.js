@@ -18,7 +18,7 @@ function removeProject (projectName) {
   })
   saveToLocal();
   render(projectsArray);
-} 
+}
 
 export default function app() {
   return {
