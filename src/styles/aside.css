@@ -68,9 +68,17 @@ aside button {
   margin-left: auto;
 }
 
+.project {
+  cursor: pointer;
+}
+
 .project:hover button {
   visibility: visible;
   background-color: var(--grey);
+}
+
+.project button:hover {
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 750px) {

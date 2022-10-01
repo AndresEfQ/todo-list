@@ -1,24 +1,24 @@
 import options from "../assets/icons/menu-dots.png";
+import add from "../assets/icons/plus.png";
 import settings from "../assets/icons/settings-sliders.png";
 import $ from "jquery";
 
-export default function renderCurrentProject(project) {
-
-  let projectElement = $(
+export default function renderCurrentProject(project, element) {
+  const parentElement = element || $('main');
+  parentElement.html('');
+  const projectElement = $(
     `<div id="current_project">
       <div id="project_header">
-        <h2 id="projectTitle">Sample Project</h2>
+        <h2 id="projectTitle">${project.name}</h2>
         <button type="button"><img src=${options} alt="options" /></button>
         <button type="button"><img src=${settings} alt="settings" /></button>
       </div>
-      <div class="tasks"></div>
     </div>`
   );
-
-  $('main').append(projectElement);
-
+  const tasks = $(`<div class="tasks"></div>`);
+  
   project.tasks.forEach((task) => {
-    let taskElement = $(
+    const taskElement = $(
       `<div class="todos">
         <div class="todo">
           <input type="checkbox" />
@@ -30,7 +30,16 @@ export default function renderCurrentProject(project) {
         </div>
       </div>`
     );
-    $('.tasks').append(taskElement);
-  })
+    tasks.append(taskElement);
+  });
+
+  const addTask = $(
+    `<div class="add_task">
+      <img src=${add} alt="add task" />
+      <p>Add task</p>
+    </div>`
+  );
+
+  parentElement.append(projectElement.append(tasks), addTask);
 }
 

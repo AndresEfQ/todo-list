@@ -5,9 +5,10 @@ import app from "../app.js";
 export default function addProject (projectName) {
 
   function project (name) {
+    let isSelected = true;
     let tasks = [];
     return {
-      name, tasks/* , addTask, removeTask */
+      name, isSelected, tasks/* , addTask, removeTask */
     }
   }
 
