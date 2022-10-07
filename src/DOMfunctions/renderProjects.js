@@ -9,10 +9,6 @@ function handleRemove(projectName) {
   }
 }
 
-function handleRenderCurrentProject(projectName) {
-
-}
-
 export default function renderProjects(array) {
   $(function () {
     $('#projects').html('');

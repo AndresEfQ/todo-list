@@ -15,13 +15,13 @@ function addProject(project) {
   render(projectsArray);
 }
 
-function removeProject (projectName) {
+function removeProject(projectName) {
   projectsArray = projectsArray.filter(project => project.name !== projectName)
   saveToLocal('projects');
   render(projectsArray);
 }
 
-function selectProject (projectName) {
+function selectProject(projectName) {
   let currentProject = projectsArray.find(project => {
     return project.name == projectName;
   });
@@ -36,10 +36,15 @@ function selectProject (projectName) {
   }
 }
 
+function findSelectedProject() {
+  return projectsArray.find(project => project.isSelected == true);
+}
+
 export default function app() {
   return {
     addProject,
     removeProject,
-    selectProject
+    selectProject,
+    findSelectedProject,
   };
 }

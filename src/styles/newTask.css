@@ -1,4 +1,4 @@
-.new-project {
+.new-task {
   position: absolute;
   width: 400px;
   top: 32px;
@@ -11,30 +11,41 @@
   box-shadow: 0 0 20px 10px #444444;
 }
 
-.new-project__header {
-  padding: 14px 30px;
-  font-weight: 700;
-  background-color: var(--light-grey);
-  border-bottom: 1px solid var(--grey);
-  border-radius: 10px 10px 0 0;
-}
-
-.new-project form {
-  height: 150px;
-  padding: 40px 30px;
+.new-task form {
+  /* height: 150px; */
+  padding: 15px 30px;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.new-project input {
+.new-task label {
+  margin-top: 10px;
+}
+
+.new-task input {
   height: 30px;
   padding: 10px;
+  color: var(--dark-grey);
   border: 1px solid var(--grey);
   border-radius: 5px;
 }
 
-.new-project__footer {
+.new-task input[type=text] {
+  font-family: monospace;
+  font-size: 1.1rem;
+} 
+
+.new-task textarea {
+  height: 150px;
+  padding: 10px;
+  color: var(--dark-grey);
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  resize: none;
+}
+
+.new-task__footer {
   padding: 14px 30px;
   display: flex;
   justify-content: end;
@@ -42,7 +53,7 @@
   border-top: 1px solid var(--grey);
 }
 
-.new-project__footer button {
+.new-task__footer button {
   font-family: inherit;
   font-weight: 700;
   padding: 7px 14px;
@@ -52,11 +63,11 @@
   transition: all 0.3s;
 }
 
-.new-project__footer button#add {
+.new-task__footer button#add {
   background-color: var(--red);
   color: white;
 }
 
-.new-project__footer button:hover {
+.new-task__footer button:hover {
   border: 1px solid var(--dark-grey);
 }

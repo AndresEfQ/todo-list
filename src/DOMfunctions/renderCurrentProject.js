@@ -1,11 +1,11 @@
 import options from "../assets/icons/menu-dots.png";
 import add from "../assets/icons/plus.png";
 import settings from "../assets/icons/settings-sliders.png";
+import newTask from "../components/newTask";
 import $ from "jquery";
 
-export default function renderCurrentProject(project, element) {
-  const parentElement = element || $('main');
-  parentElement.html('');
+export default function renderCurrentProject(project, element = $('main')) {
+  element.html('');
   const projectElement = $(
     `<div id="current_project">
       <div id="project_header">
@@ -38,8 +38,8 @@ export default function renderCurrentProject(project, element) {
       <img src=${add} alt="add task" />
       <p>Add task</p>
     </div>`
-  );
+  ).on('click', newTask);
 
-  parentElement.append(projectElement.append(tasks), addTask);
+  element.append(projectElement.append(tasks), addTask);
 }
 
