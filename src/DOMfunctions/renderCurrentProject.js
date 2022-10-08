@@ -2,7 +2,9 @@ import options from "../assets/icons/menu-dots.png";
 import add from "../assets/icons/plus.png";
 import settings from "../assets/icons/settings-sliders.png";
 import newTask from "../components/newTask";
+import { format, isSameWeek } from 'date-fns'
 import $ from "jquery";
+import { parseISO } from "date-fns/esm";
 
 export default function renderCurrentProject(project, element = $('main')) {
   element.html('');
@@ -16,8 +18,18 @@ export default function renderCurrentProject(project, element = $('main')) {
     </div>`
   );
   const tasks = $(`<div class="tasks"></div>`);
-  
+
+  function formatDate(date) {
+    const dateObj = parseISO(date);
+    if (isSameWeek(new Date(), dateObj)) {
+      return format(dateObj, 'EEEE');
+    } else {
+      return format(dateObj, 'EEEE');
+    }
+  }
+
   project.tasks.forEach((task) => {
+    const formatedDate = formatDate(task.dueDate);
     const taskElement = $(
       `<div class="todos">
         <div class="todo">
@@ -25,7 +37,7 @@ export default function renderCurrentProject(project, element = $('main')) {
           <div class="todo_content">
             <h4>${task.title}</h4>
             <p>${task.description}</p>
-            <span>${task.dueDate}</span>
+            <span>${formatedDate}</span>
           </div>
         </div>
       </div>`

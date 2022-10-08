@@ -2,8 +2,8 @@ import render from "./DOMfunctions/renderProjects.js";
 
 let projectsArray = JSON.parse(localStorage.getItem('projects')) || [];
 
-function saveToLocal(objectName) {
-  localStorage.setItem(objectName, JSON.stringify(projectsArray));
+function saveToLocal() {
+  localStorage.setItem('projects', JSON.stringify(projectsArray));
 }
 
 function addProject(project) {
@@ -11,13 +11,13 @@ function addProject(project) {
     project.isSelected = false;
   });
   projectsArray.push(project);
-  saveToLocal('projects');
+  saveToLocal();
   render(projectsArray);
 }
 
 function removeProject(projectName) {
   projectsArray = projectsArray.filter(project => project.name !== projectName)
-  saveToLocal('projects');
+  saveToLocal();
   render(projectsArray);
 }
 
@@ -43,6 +43,7 @@ function findSelectedProject() {
 export default function app() {
   return {
     addProject,
+    saveToLocal,
     removeProject,
     selectProject,
     findSelectedProject,

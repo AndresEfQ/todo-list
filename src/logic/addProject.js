@@ -1,5 +1,5 @@
-import addTask from "./addTask.js"; 
-import removeTask from "./removeTask.js";
+/* import addTask from "./addTask.js"; 
+import removeTask from "./removeTask.js"; */
 import app from "../app.js";
 
 export default function addProject (projectName) {
@@ -8,20 +8,20 @@ export default function addProject (projectName) {
     let isSelected = true;
     let tasks = [];
 
-    const handleAddTask = function (title, description, dueDate) {
+    /* const handleAddTask = function (title, description, dueDate) {
       tasks.push(addTask({title, description, dueDate}));
-    };
+    }; */
 
-    const removeTask = function () {
+    /* const removeTask = function () {
       removeTask();
-    };
+    }; */
 
     return {
       name, 
       isSelected, 
-      tasks, 
-      handleAddTask, 
-      removeTask,
+      tasks,
+      /* handleAddTask, 
+      removeTask, */
     }
   }
 

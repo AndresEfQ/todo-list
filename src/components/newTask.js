@@ -1,34 +1,40 @@
 import app from "../app";
+import addTask from "../logic/addTask";
+import renderCurrentProject from "../DOMfunctions/renderCurrentProject.js";
 import "../styles/globals.css";
 import "../styles/newTask.css";
 import $ from "jquery";
 
 export default function newTask() {
   $(function () {
-    console.log('new task');
 
     function cancelNewTask() {
       $('.new-task').remove();
     }
 
     function handleAddTask() {
+      if (!$('#title').val() || !$('#dueDate').val()) {
+        alert('Please complete at least the task title and due date');
+        return;
+      }
       const currentProject = app().findSelectedProject();
-      console.log(currentProject);
       const taskArgs = {
+        project: currentProject,
         title: $('#title').val(),
         description: $('#description').val(),
         dueDate: $('#dueDate').val()
       }
-      currentProject.handleAddTask(taskArgs);
+      addTask(taskArgs);
+      renderCurrentProject(currentProject);
+      app().saveToLocal();
       $('.new-task').remove();
-      console.log(currentProject.tasks)
     }
 
-    const cancelButton = $('<button type="button" id="cancel">Cancel</button>');
-    cancelButton.on('click', cancelNewTask);
+    const cancelButton = $('<button type="button" id="cancel">Cancel</button>')
+      .on('click', cancelNewTask);
 
-    const addButton = $('<button type="button" id="add">Add Task</button>');
-    addButton.on('click', handleAddTask);
+    const addButton = $('<button type="button" id="add">Add Task</button>')
+      .on('click', handleAddTask);
 
     const newTaskElement = $(
       `<div class="new-task">
@@ -50,5 +56,6 @@ export default function newTask() {
     );
 
     $('#content').append(newTaskElement);
+    /* Array.from($('.new-task input')).forEach((input) => input.addEventListener('blur', console.log('validate'))); */
   });
 }

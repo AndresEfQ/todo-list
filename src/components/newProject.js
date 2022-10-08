@@ -36,6 +36,10 @@ export default function newProject() {
     }
 
     function addNewProject() {
+      if (!$('#name').val()) {
+        alert('Please choose a project name');
+        return;
+      }
       addPorject($('#name').val());
       $('.new-project').remove();
 

@@ -17,7 +17,7 @@ export default function main () {
             {
               title: "Sample task",
               description: "Sample description",
-              dueDate: "today"
+              dueDate: '2022-02-11T11:30:30'
             }
           ]
        };
