@@ -16,27 +16,6 @@ export default function aside() {
     const asideElement = $(
       `<aside class="toggleable"></aside>`
     );
-    const inbox = $(
-      `<div id='inbox'>
-        <img src=${inboxIcon} alt="inbox" />
-        <p>Inbox</p>
-        <span>3</span>
-      </div>`
-    );
-    const today = $(
-      `<div id='today'>
-        <img src=${todayIcon} alt="today" />
-        <p>today</p>
-        <span>3</span>
-      </div>`
-    );
-    const upcoming = $(
-      `<div id='upcoming'>
-        <img src=${upcomingIcon} alt="upcoming" />
-        <p>upcoming</p>
-        <span>3</span>
-      </div>`
-    );
 
     // Add the event listener to add new project
     const projectsTitle = $(
@@ -51,7 +30,7 @@ export default function aside() {
 
     renderProjects(projects);
 
-    asideElement.append(inbox, today, upcoming, projectsTitle, projectsDiv);
+    asideElement.append(/* today, upcoming, */ projectsTitle, projectsDiv);
     $('.container').append(asideElement);
   });
 }

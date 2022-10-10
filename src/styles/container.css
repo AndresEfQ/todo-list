@@ -7,7 +7,7 @@
 .shade {
   position: absolute;
   width: 100%;
-  height: calc(100vh - 43px - 30px);
+  height: calc(100vh - 43px - 45px);
   transition: opacity 0.5s;
   pointer-events: none;
 }

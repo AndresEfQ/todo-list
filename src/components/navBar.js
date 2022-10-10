@@ -3,8 +3,9 @@ import homeIcon from "../assets/icons/home.png";
 import addTaskIcon from "../assets/icons/plus.png";
 import "../styles/globals.css";
 import "../styles/navBar.css";
-import $ from "jquery";
+import newTask from "./newTask";
 import toggleMenu from "../DOMfunctions/toggleMenu.js";
+import $ from "jquery";
 
 export default function navBar() {
   $(function () {
@@ -24,7 +25,7 @@ export default function navBar() {
       `<button class="add-task">
         <img src=${addTaskIcon} alt="add" />
       </button>`
-    );
+    ).on('click', newTask);;
     nav.append(menu, home, addTask);
     $('#content').append(nav);
   });

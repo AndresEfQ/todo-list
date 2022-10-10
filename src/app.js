@@ -1,6 +1,9 @@
 import render from "./DOMfunctions/renderProjects.js";
+import renderCurrentProject from "./DOMfunctions/renderCurrentProject.js";
 
-let projectsArray = JSON.parse(localStorage.getItem('projects')) || [];
+const projectsArray = JSON.parse(localStorage.getItem('projects')) || [];
+
+console.log(projectsArray);
 
 function saveToLocal() {
   localStorage.setItem('projects', JSON.stringify(projectsArray));
@@ -40,6 +43,19 @@ function findSelectedProject() {
   return projectsArray.find(project => project.isSelected == true);
 }
 
+function completeTask(projectName, taskTitle) {
+  let currentProject = projectsArray.find((project) => {
+    return project.name == projectName
+  });
+  let currentTask = currentProject.tasks.find((task) => {
+    return task.title == taskTitle;
+  });
+  currentTask.isCompleted = true;
+  alert(`${taskTitle} completed`);
+  renderCurrentProject(currentProject);
+  saveToLocal();
+}
+
 export default function app() {
   return {
     addProject,
@@ -47,5 +63,6 @@ export default function app() {
     removeProject,
     selectProject,
     findSelectedProject,
+    completeTask,
   };
 }

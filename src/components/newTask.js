@@ -4,6 +4,7 @@ import renderCurrentProject from "../DOMfunctions/renderCurrentProject.js";
 import "../styles/globals.css";
 import "../styles/newTask.css";
 import $ from "jquery";
+import { isToday } from "date-fns";
 
 export default function newTask() {
   $(function () {
@@ -44,7 +45,7 @@ export default function newTask() {
           <label for="description">Description</label>
           <textarea id="description" name="description" rows="5" cols="33"></textarea>
           <label for="dueDate">Due Date</label>
-          <input type="date" id="dueDate" name="dueDate" />
+          <input type="datetime-local" id="dueDate" name="dueDate" />
         </form>
         <div className="new-task__footer">
         </div>
@@ -56,6 +57,5 @@ export default function newTask() {
     );
 
     $('#content').append(newTaskElement);
-    /* Array.from($('.new-task input')).forEach((input) => input.addEventListener('blur', console.log('validate'))); */
   });
 }

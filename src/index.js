@@ -1,5 +1,7 @@
-import navBar from "./components/navBar.js";
-import container from "./components/container.js";
+import navBar from "./components/navBar";
+import container from "./components/container";
+import footer from "./components/footer"
 
 navBar();
 container();
+footer();

@@ -1,8 +1,5 @@
 import $ from "jquery";
-import options from "../assets/icons/menu-dots.png";
-import settings from "../assets/icons/settings-sliders.png";
 import showMain from "../DOMfunctions/showMain.js";
-import addProject from "../logic/addProject.js";
 import renderCurrentProject from "../DOMfunctions/renderCurrentProject.js";
 import "../styles/globals.css";
 import "../styles/main.css";
@@ -10,25 +7,16 @@ import "../styles/main.css";
 export default function main () {
   $(function () {
     let mainElement = $(`<main class="toggleable"></main>`);
-    const defaultProject = JSON.parse(localStorage.getItem("inbox")) 
+    const defaultProject = JSON.parse(localStorage.getItem("projects"))[0] 
     || {
-          name: "Inbox",
-          tasks: [
-            {
-              title: "Sample task",
-              description: "Sample description",
-              dueDate: '2022-02-11T11:30:30'
-            }
-          ]
+          name: "Add new projects in the left menu",
+          tasks: []
        };
 
     renderCurrentProject(defaultProject, mainElement);
     mainElement.on('click', showMain)
     $('.container').append(mainElement);
 
-    if (!(localStorage.getItem("inbox"))) {
-      localStorage.setItem('inbox', JSON.stringify(defaultProject));
-    }
   });
-
+  $('input[checkbox]').on('change', console.log('checked'));
 }

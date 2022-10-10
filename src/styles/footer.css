@@ -1,0 +1,28 @@
+footer {
+  height: 30px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--red);
+  color: var(--light-grey);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+footer img {
+  height: 25px;
+  width: 25px;
+}
+
+footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--light-grey);
+}
