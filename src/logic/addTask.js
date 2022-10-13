@@ -1,9 +1,10 @@
 export default function addTask(taskArgs) {
-
-  const {project, title, description, dueDate} = taskArgs;
+  const {
+    project, title, description, dueDate,
+  } = taskArgs;
   const projectName = project.name;
-  let isCompleted = false;
-  
+  const isCompleted = false;
+
   const task = {
     title,
     description,
@@ -12,5 +13,5 @@ export default function addTask(taskArgs) {
     projectName,
   };
 
-  project.tasks.push(task); 
+  project.tasks.push(task);
 }

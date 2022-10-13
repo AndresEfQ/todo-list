@@ -1,28 +1,15 @@
-/* import addTask from "./addTask.js"; 
-import removeTask from "./removeTask.js"; */
-import app from "../app.js";
+import app from '../app';
 
-export default function addProject (projectName) {
-
-  function project (name) {
-    let isSelected = true;
-    let tasks = [];
-
-    /* const handleAddTask = function (title, description, dueDate) {
-      tasks.push(addTask({title, description, dueDate}));
-    }; */
-
-    /* const removeTask = function () {
-      removeTask();
-    }; */
+export default function addProject(projectName) {
+  function project(name) {
+    const isSelected = true;
+    const tasks = [];
 
     return {
-      name, 
-      isSelected, 
+      name,
+      isSelected,
       tasks,
-      /* handleAddTask, 
-      removeTask, */
-    }
+    };
   }
 
   app().addProject(project(projectName));

@@ -1,10 +1,10 @@
-import { 
-  differenceInCalendarDays, 
-  format, 
-  isToday, 
+import {
+  differenceInCalendarDays,
+  format,
+  isToday,
   isTomorrow,
   isFuture,
-  isPast 
+  isPast,
 } from 'date-fns';
 
 export default function formatDate(string) {
@@ -17,11 +17,11 @@ export default function formatDate(string) {
   }
   if (differenceInCalendarDays(date, new Date()) < 7) {
     if (isFuture(date)) {
-      return 'Next ' + format(date, 'EEEE');
+      return `Next ${format(date, 'EEEE')}`;
     }
     if (isPast(date)) {
-      return 'Last ' + format(date, 'EEEE');
+      return `Last ${format(date, 'EEEE')}`;
     }
-  } 
+  }
   return format(date, 'dd - MMMM');
 }

@@ -1,14 +1,12 @@
-import app from "../app";
-import addTask from "../logic/addTask";
-import renderCurrentProject from "../DOMfunctions/renderCurrentProject.js";
-import "../styles/globals.css";
-import "../styles/newTask.css";
-import $ from "jquery";
-import { isToday } from "date-fns";
+import $ from 'jquery';
+import app from '../app';
+import addTask from '../logic/addTask';
+import renderCurrentProject from '../DOMfunctions/renderCurrentProject';
+import '../styles/globals.css';
+import '../styles/newTask.css';
 
 export default function newTask() {
-  $(function () {
-
+  $(() => {
     function cancelNewTask() {
       $('.new-task').remove();
     }
@@ -23,8 +21,8 @@ export default function newTask() {
         project: currentProject,
         title: $('#title').val(),
         description: $('#description').val(),
-        dueDate: $('#dueDate').val()
-      }
+        dueDate: $('#dueDate').val(),
+      };
       addTask(taskArgs);
       renderCurrentProject(currentProject);
       app().saveToLocal();
@@ -49,11 +47,11 @@ export default function newTask() {
         </form>
         <div className="new-task__footer">
         </div>
-      </div>`
+      </div>`,
     );
 
     newTaskElement.append(
-      $($('<div class="new-task__footer"></div>')).append(cancelButton, addButton)
+      $($('<div class="new-task__footer"></div>')).append(cancelButton, addButton),
     );
 
     $('#content').append(newTaskElement);

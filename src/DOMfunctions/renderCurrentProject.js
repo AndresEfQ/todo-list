@@ -1,8 +1,8 @@
-import add from "../assets/icons/plus.png";
-import newTask from "../components/newTask";
-import formatDate from "./formatDate";
-import app from "../app";
-import $ from "jquery";
+import $ from 'jquery';
+import add from '../assets/icons/plus.png';
+import newTask from '../components/newTask';
+import formatDate from './formatDate';
+import app from '../app';
 
 export default function renderCurrentProject(project, element = $('main')) {
   element.html('');
@@ -11,9 +11,9 @@ export default function renderCurrentProject(project, element = $('main')) {
       <div id="project_header">
         <h2 id="projectTitle">${project.name}</h2>
       </div>
-    </div>`
+    </div>`,
   );
-  const tasks = $(`<div class="tasks"></div>`);
+  const tasks = $('<div class="tasks"></div>');
 
   project.tasks.forEach((task) => {
     if (!task.isCompleted) {
@@ -28,19 +28,18 @@ export default function renderCurrentProject(project, element = $('main')) {
               <span>${formatedDate}</span>
             </div>
           </div>
-        </div>`
+        </div>`,
       ).on('change', () => app().completeTask(project.name, task.title));
       tasks.append(taskElement);
-    } 
+    }
   });
 
   const addTask = $(
     `<div class="add_task">
       <img src=${add} alt="add task" />
       <p>Add task</p>
-    </div>`
+    </div>`,
   ).on('click', newTask);
 
   element.append(projectElement.append(tasks), addTask);
 }
-

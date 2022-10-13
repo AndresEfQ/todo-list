@@ -1,10 +1,23 @@
-import addPorject from "../logic/addProject.js";
-import "../styles/globals.css";
-import "../styles/newProject.css";
-import $ from "jquery";
+import $ from 'jquery';
+import addPorject from '../logic/addProject';
+import '../styles/globals.css';
+import '../styles/newProject.css';
 
 export default function newProject() {
-  $(function () {
+  $(() => {
+    function cancelNewProject() {
+      $('.new-project').remove();
+    }
+
+    function addNewProject() {
+      if (!$('#name').val()) {
+        alert('Please choose a project name');
+        return;
+      }
+      addPorject($('#name').val());
+      $('.new-project').remove();
+    }
+
     const cancelButton = $('<button type="button" id="cancel">Cancel</button>');
     cancelButton.on('click', cancelNewProject);
 
@@ -22,27 +35,13 @@ export default function newProject() {
         </form>
         <div className="new-project__footer">
         </div>
-      </div>`
+      </div>`,
     );
 
     newProjectElement.append(
-      $($('<div class="new-project__footer"></div>')).append(cancelButton, addButton)
+      $($('<div class="new-project__footer"></div>')).append(cancelButton, addButton),
     );
 
     $('#content').append(newProjectElement);
-
-    function cancelNewProject() {
-      $('.new-project').remove();
-    }
-
-    function addNewProject() {
-      if (!$('#name').val()) {
-        alert('Please choose a project name');
-        return;
-      }
-      addPorject($('#name').val());
-      $('.new-project').remove();
-
-    }
   });
 }

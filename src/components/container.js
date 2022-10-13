@@ -1,17 +1,17 @@
-import $ from "jquery";
-import aside from "./aside.js";
-import main from "./main.js";
-import handleResize from "../DOMfunctions/handleResize.js";
-import "../styles/container.css";
+import $ from 'jquery';
+import aside from './aside';
+import main from './main';
+import handleResize from '../DOMfunctions/handleResize';
+import '../styles/container.css';
 
 export default function container() {
-  $(function () {
-    const container = $('<div class="container toggleable"></div>');
+  $(() => {
+    const $container = $('<div class="container toggleable"></div>');
     const shade = $('<div class="shade"></div>');
-    container.append(shade);
+    $container.append(shade);
     aside();
     main();
     $(window).on('resize', handleResize);
-    $('#content').append(container);
+    $('#content').append($container);
   });
 }
